@@ -38,6 +38,10 @@ class App extends Component {
             })),
           ],
         }));
+        window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: 'smooth',
+        });
       })
       .finally(() => {
         this.setState({ isLoading: false });
@@ -46,11 +50,6 @@ class App extends Component {
 
   handleMoreClick = () => {
     this.populateImages();
-
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
   };
   handleImgClick = src => {
     this.setState({ bigImg: src, showModal: true });
